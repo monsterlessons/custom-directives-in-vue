@@ -1,18 +1,19 @@
 <template>
   <div>
     <h1>Hello Vue!</h1>
-    <loginForm/>
-    <successMessage/>
+    <input type='text' ref='name'/>
+    <button @click='focus'>Focus input</button>
   </div>
+
 </template>
 
 <script>
-import loginForm from './LoginForm.vue'
-import successMessage from './SuccessMessage.vue'
 export default {
-  components: {
-    loginForm,
-    successMessage
+  methods: {
+    focus () {
+      console.log('here will be focus', this.$refs.name)
+      this.$refs.name.focus()
+    }
   }
 }
 </script>
