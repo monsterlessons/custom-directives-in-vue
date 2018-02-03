@@ -1,19 +1,29 @@
 <template>
   <div>
     <h1>Hello Vue!</h1>
-    <input type='text' ref='name'/>
-    <button @click='focus'>Focus input</button>
+    <alert>
+      <b>This is</b> {{message}}
+    </alert>
   </div>
 
 </template>
 
 <script>
+import alert from './Alert.vue'
 export default {
-  methods: {
-    focus () {
-      console.log('here will be focus', this.$refs.name)
-      this.$refs.name.focus()
+  data () {
+    return {
+      message: 'our success message'
     }
+  },
+  components: {
+    alert
   }
 }
 </script>
+
+<style scoped>
+  b {
+    color: red;
+  }
+</style>
