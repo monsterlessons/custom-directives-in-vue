@@ -1,5 +1,9 @@
 <template>
   <div class='alert success'>
+    <div class='title'>
+      <slot name='title' />
+    </div>
+    <slot name='description' />
     <slot />
   </div>
 </template>
@@ -25,5 +29,9 @@
 
   b {
     color: blue;
+  }
+
+  .title {
+    font-size: 20px;
   }
 </style>
